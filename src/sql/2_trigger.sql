@@ -46,4 +46,18 @@ BEFORE INSERT ON taste
 FOR EACH ROW 
 EXECUTE FUNCTION trg_taste();
 
+/*
+income±íµÄ´¥·¢Æ÷
+*/
+CREATE OR REPLACE FUNCTION trg_income() RETURNS trigger AS $trg_income$
+    BEGIN
+        DELETE FROM income
+        WHERE "month"= NEW."month" and "city"=NEW."city" and "type"=NEW."type";
+        return NEW;
+    END;
+$trg_income$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE TRIGGER incomeBeforeInsertOrUpdate
+BEFORE INSERT ON income
+FOR EACH ROW 
+EXECUTE FUNCTION trg_income();

@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS myuser (
 */
 CREATE TABLE IF NOT EXISTS search (
 	"id" SERIAL PRIMARY KEY,
-	"username" VARCHAR(32) NOT NULL,
+	"user_id" INT references myuser("id"),
 	"flavor_type" VARCHAR(32) NOT NULL,
 	"req_name" VARCHAR(32) NOT NULL,
 	"req_description" VARCHAR(255),
