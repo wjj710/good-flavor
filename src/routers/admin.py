@@ -85,3 +85,35 @@ async def all_taste_query():
         print(e)
         raise OperationFailed()
     return result
+
+@admin_router.get("/benefits_query")
+async def benefits_query(flavor_type: str="",city: str="beijing",start_time:datetime.date=datetime.date(1999,1,1),
+                         stop_time: datetime.date=datetime.date.today()):
+    if start_time.year==0:
+        if stop_time.month>3:
+            start_time=datetime.date(stop_time.year,stop_time.month-3,stop_time.day)
+        else:
+            start_time=datetime.date(stop_time.year+1,stop_time.month+8,stop_time.day)
+
+    if flavor_type=='':
+        command=f"""
+        SELECT "finish_time","flavor_type","city","req_id","user1_id","user2_id","fee1","fee2"  
+        FROM success INNER JOIN search ON success.user_id = User.id_number 
+        INNER JOIN User ON success.user1_id = User.id_number;
+        WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
+        AND "city"={city}
+        """
+    else:
+        command = f"""
+        SELECT "finish_time","flavor_type","city","req_id","user1_id","user2_id","fee1","fee2" 
+        FROM success INNER JOIN search ON success.user_id = User.id_number 
+        INNER JOIN User ON success.user1_id = User.id_number;
+        WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
+        AND "city"={city} AND "flavor_type"={flavor_type}
+        """
+    try:
+        result=await fetch_all(command)
+    except asyncpg.PostgresError as e:
+        print(e)
+        raise OperationFailed()
+    return result
