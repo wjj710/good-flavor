@@ -188,7 +188,7 @@ async def success_add(s: success):
     """
     result3=await fetch_all(command3)
 
-    num=1;
+    num=1
     fee=s.fee1+s.fee2
     if len(result3)!=0:
         num=result3[0][3]+1
