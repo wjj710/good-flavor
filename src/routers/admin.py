@@ -6,7 +6,7 @@ from typing import Any, Optional, List
 import fastapi
 from ..exceptions import OperationFailed
 import pydantic
-from ..user import User
+from ..user import UserInfo
 from src.utils import fetch_all, fetch_one, fetch_one_then_wrap_model, get_connection
 
 admin_router = APIRouter(
@@ -15,7 +15,7 @@ admin_router = APIRouter(
 )
 
 
-@admin_router.get("/user", response_model=List[User])
+@admin_router.get("/user", response_model=List[UserInfo])
 async def get_users():
     """获取所有用户，需要管理员权限
 
@@ -23,7 +23,7 @@ async def get_users():
         List[User]: 所有用户的信息
     """
     users = await fetch_all('SELECT * FROM myuser')
-    return [User(**user) for user in users]
+    return [UserInfo(**user) for user in users]
 
 
 @admin_router.post("/administrator/{userid}")
