@@ -103,7 +103,7 @@ async def benefits_query(flavor_type: str="",city: str="beijing",start_time:date
         FROM success INNER JOIN search ON success.req_id = search.id 
         INNER JOIN myuser ON success.user1_id = myuser.id
         WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
-        AND "city"={city}
+        AND "city"='{city}'
         """
     else:
         command = f"""
@@ -111,7 +111,7 @@ async def benefits_query(flavor_type: str="",city: str="beijing",start_time:date
         FROM success INNER JOIN search ON success.req_id = search.id 
         INNER JOIN myuser ON success.user1_id = myuser.id
         WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
-        AND "city"={city} AND "flavor_type"={flavor_type}
+        AND "city"='{city}' AND "flavor_type"='{flavor_type}'
         """
     try:
         result=await fetch_all(command)
