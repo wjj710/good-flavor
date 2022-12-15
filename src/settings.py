@@ -43,26 +43,6 @@ class Settings:
     MAX_ROW_PER_FILE = 50000
     TEMPDIR = ".tb"
 
-class ValidUploadTableName(str, Enum):
-    tbcell = "tbcell"
-    tbkpi = "tbkpi"
-    tbprb = "tbprb"
-    tbmrodata = "tbmrodata"
-    tbc2i = "tbc2i"
-
-
-class ValidTableName(str, Enum):
-    tbcell = "tbcell"
-    tbkpi = "tbkpi"
-    tbprb = "tbprb"
-    tbmrodata = "tbmrodata"
-    tbprbnew = "tbprbnew"
-    tbC2I = "tbc2i"
-    tbMRODataExternal = "tbmrodataexternal"
-    tbC2Inew = "tbc2inew"
-    tbC2I3 = "tbc2i3"
-
-
 str2Model = {
     str.lower(key):value for key,value in vars(model).items() if key.startswith("tb")
 }
