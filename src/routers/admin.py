@@ -8,6 +8,8 @@ from ..exceptions import OperationFailed
 import pydantic
 from ..user import UserInfo
 from src.utils import fetch_all, fetch_one, fetch_one_then_wrap_model, get_connection
+import asyncpg
+
 
 admin_router = APIRouter(
     prefix="/admin",
@@ -99,17 +101,17 @@ async def benefits_query(flavor_type: str="",city: str="beijing",start_time:date
         command=f"""
         SELECT "finish_time","flavor_type","city","req_id","user1_id","user2_id","fee1","fee2"  
         FROM success INNER JOIN search ON success.req_id = search.id 
-        INNER JOIN myuser ON success.user1_id = myuser.id;
+        INNER JOIN myuser ON success.user1_id = myuser.id
         WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
-        AND "city"={city}
+        AND "city"='{city}'
         """
     else:
         command = f"""
         SELECT "finish_time","flavor_type","city","req_id","user1_id","user2_id","fee1","fee2"  
         FROM success INNER JOIN search ON success.req_id = search.id 
-        INNER JOIN myuser ON success.user1_id = myuser.id;
+        INNER JOIN myuser ON success.user1_id = myuser.id
         WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
-        AND "city"={city} AND "flavor_type"={flavor_type}
+        AND "city"='{city}' AND "flavor_type"='{flavor_type}'
         """
     try:
         result=await fetch_all(command)
