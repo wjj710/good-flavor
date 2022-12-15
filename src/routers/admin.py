@@ -95,7 +95,7 @@ async def benefits_query(flavor_type: str="",city: str="beijing",start_time:date
         if stop_time.month>3:
             start_time=datetime.date(stop_time.year,stop_time.month-3,stop_time.day)
         else:
-            start_time=datetime.date(stop_time.year+1,stop_time.month+8,stop_time.day)
+            start_time=datetime.date(stop_time.year-1,stop_time.month+8,stop_time.day)
 
     if flavor_type=='':
         command=f"""
