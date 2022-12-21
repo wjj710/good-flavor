@@ -89,16 +89,17 @@ async def all_taste_query():
     return result
 
 @admin_router.get("/benefits_query")
-async def benefits_query(flavor_type: str="",city: str="beijing",start_time:datetime.date=datetime.date(1999,1,1),
-                         stop_time: datetime.date=datetime.date.today(),flag:int=0):
-    if start_time.year==1999:
-        if stop_time.month>3:
-            start_time=datetime.date(stop_time.year,stop_time.month-3,stop_time.day)
+async def benefits_query(flavor_type: str = "", city: str = "beijing",
+                         start_time: datetime.date = datetime.date(1999, 1, 1),
+                         stop_time: datetime.date = datetime.date.today(), flag: int = 0):
+    if start_time.year == 1999:
+        if stop_time.month > 3:
+            start_time = datetime.date(stop_time.year, stop_time.month - 3, stop_time.day)
         else:
-            start_time=datetime.date(stop_time.year-1,stop_time.month+8,stop_time.day)
+            start_time = datetime.date(stop_time.year - 1, stop_time.month + 8, stop_time.day)
 
-    if flavor_type=='':
-        command=f"""
+    if flavor_type == '':
+        command = f"""
         SELECT "finish_time","flavor_type","city","req_id","user1_id","user2_id","fee1","fee2"  
         FROM success INNER JOIN search ON success.req_id = search.id 
         INNER JOIN myuser ON success.user1_id = myuser.id
@@ -113,13 +114,13 @@ async def benefits_query(flavor_type: str="",city: str="beijing",start_time:date
         WHERE "finish_time"<='{stop_time}' AND "finish_time">='{start_time}'
         AND "city"='{city}' AND "flavor_type"='{flavor_type}'
         """
-    if flag==1:
-        command+='Order By "finish_time"'
-    elif flag==2:
-        command+='Order By "fee1"'
-        
+    if flag == 1:
+        command += '/nORDER BY "finish_time" DESC'
+    elif flag == 2:
+        command += '/nORDER BY "fee1" DESC'
+
     try:
-        result=await fetch_all(command)
+        result = await fetch_all(command)
     except asyncpg.PostgresError as e:
         print(e)
         raise OperationFailed()
