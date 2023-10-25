@@ -1,23 +1,23 @@
 # good-flavor
-此仓库用来存储2022年北邮《Web开发技术》的大作业后端代码。
+This is the backend code for the "good-flavor" project.
 
-# 配置环境
+# Configure environment
 * python 3.8+
 * PostgreSQL 14
 
-# 安装库
+# Install libraries and dependencies
 在项目根目录下
 ```powershell
 pip install -r requirements.txt
 ```
-# 创建表
+# Create tables
 在项目根目录下
 ```shell
 createdb tb
 psql -U postgres -d tb -f "src/sql/1_create_table.sql" 
 psql -U postgres -d tb -f "src/sql/2_trigger.sql"
 ```
-# 配置数据库
+# Set the username and password for the database
 目录下新建`config.json`:
 ```json
 {
@@ -25,7 +25,7 @@ psql -U postgres -d tb -f "src/sql/2_trigger.sql"
 	"password":"password"
 }
 ```
-# 启动server
+# Start the server
 在项目根目录下
 ```powershell
 uvicorn src.main:app --reload 
