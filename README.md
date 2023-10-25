@@ -6,13 +6,13 @@ This is the backend code for the "good-flavor" project.
 * PostgreSQL 14
 
 # Install libraries and dependencies
-Under the project root directory
+Under the project root directory<br>
 Execute:
 ```powershell
 pip install -r requirements.txt
 ```
 # Create tables
-Under the project root directory
+Under the project root directory<br>
 Execute:
 ```shell
 createdb tb
@@ -29,7 +29,7 @@ Create `config.json`:
 }
 ```
 # Start the server
-Under the project root directory
+Under the project root directory<br>
 Execute:
 ```powershell
 uvicorn src.main:app --reload 
