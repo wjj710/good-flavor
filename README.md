@@ -34,3 +34,5 @@ Execute:
 ```powershell
 uvicorn src.main:app --reload 
 ```
+# Details of this project
+https://docs.google.com/document/d/11coszMhuLH1KRHeZetHJNaN1YgMVt9RwFA5YJ9y6ftA/edit#heading=h.vgvh8m3hxy71
