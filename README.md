@@ -40,7 +40,7 @@ Create `config.json`:
 	"password":"password"
 }
 ```
-If there's some problems with password authentication, see [this](https://hassanannajjar.medium.com/how-to-fix-error-password-authentication-failed-for-the-user-in-postgresql-896e1fd880dc).
+If there are some problems with password authentication, see [this](https://hassanannajjar.medium.com/how-to-fix-error-password-authentication-failed-for-the-user-in-postgresql-896e1fd880dc).
 ### Start the server
 Under the project root directory<br>
 Execute:
