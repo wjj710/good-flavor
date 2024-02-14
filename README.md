@@ -45,6 +45,6 @@ If there are some problems with password authentication, see [this](https://hass
 Under the project root directory<br>
 Execute:
 ```powershell
-uvicorn src.main:app --reload 
+uvicorn src.main:app 
 ```
 
