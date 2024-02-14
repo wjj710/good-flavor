@@ -11,6 +11,7 @@ An administrator can check some statistical information about the users, request
 ## Usage
 
 ### Configure environment
+* WSL 2
 * python 3.8+
 * PostgreSQL 14
 
@@ -39,6 +40,7 @@ Create `config.json`:
 	"password":"password"
 }
 ```
+If there's some problems with password authentication, see [this](https://hassanannajjar.medium.com/how-to-fix-error-password-authentication-failed-for-the-user-in-postgresql-896e1fd880dc).
 ### Start the server
 Under the project root directory<br>
 Execute:
