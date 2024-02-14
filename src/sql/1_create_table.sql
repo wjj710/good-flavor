@@ -1,5 +1,5 @@
 /*
-´Ë±íÓÃÀ´¼ÇÂ¼ÓÃ»§ÐÅÏ¢£¬ÓÃ»§¿ÉÒÔÐÞ¸ÄÁªÏµµç»°¡¢ÓÃ»§¼ò½éºÍµÇÂ¼ÃÜÂë
+ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½Ïµï¿½ç»°ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Íµï¿½Â¼ï¿½ï¿½ï¿½ï¿½
 */
 CREATE TABLE IF NOT EXISTS myuser (
 	"id" SERIAL PRIMARY KEY,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS myuser (
 
 
 /*
-´Ë±íÓÃÀ´¼ÇÂ¼¡°Ñ°Î¶µÀ¡±ÇëÇóÐÅÏ¢
+ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ°Î¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 */
 CREATE TABLE IF NOT EXISTS search (
 	"id" SERIAL PRIMARY KEY,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS search (
 );
 
 /*
-´Ë±íÓÃÀ´¼ÇÂ¼¡°ÇëÆ·¼ø¡±ÏìÓ¦ÐÅÏ¢
+ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ï¢
 */
 CREATE TABLE IF NOT EXISTS taste (
 	"id" SERIAL PRIMARY KEY,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS taste (
 );
 
 /*
-¡°Ñ°Î¶µÀ¡±³É¹¦Ã÷Ï¸±í
+ï¿½ï¿½Ñ°Î¶ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½
 */
 CREATE TABLE IF NOT EXISTS success (
 	"req_id" INT references search("id"),
@@ -61,12 +61,12 @@ CREATE TABLE IF NOT EXISTS success (
 );
 
 /*
-ÖÐ½éÊÕÒæ»ã×Ü±í
+ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½
 */
 CREATE TABLE IF NOT EXISTS income (
-	"month" CHAR(6) NOT NULL, --¶ÔÓ¦ÓÚ³É¹¦Ã÷Ï¸±íÖÐµÄ´ï³ÉÈÕÆÚ
-	"city" VARCHAR(32) NOT NULL, --¶ÔÓ¦ÓÚÓÃ»§±íÖÐµÄ×¢²á³ÇÊÐ
-	"type" VARCHAR(32) NOT NULL, --¶ÔÓ¦ÓÚÓÃ»§±íÖÐµÄÇëÇóÀàÐÍ
+	"month" CHAR(6) NOT NULL, --ï¿½ï¿½Ó¦ï¿½Ú³É¹ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ÐµÄ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	"city" VARCHAR(32) NOT NULL, --ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ðµï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½
+	"type" VARCHAR(32) NOT NULL, --ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	"number" INT NOT NULL, 
 	"money" NUMERIC NOT NULL
 );

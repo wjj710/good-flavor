@@ -13,7 +13,7 @@ class Settings:
     Databse
     """
     DATABASE_USER = "postgres"
-    DATABASE_PASSWORD = "ry010819"
+    DATABASE_PASSWORD = "password"
     DEFAULT_DATABASE = "tb"
 
     """

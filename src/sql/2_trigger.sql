@@ -1,5 +1,5 @@
 /*
-myuser±íµÄ´¥·¢Æ÷
+myuserï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 CREATE OR REPLACE FUNCTION trg_myuser() RETURNS trigger AS $trg_myuser$
     BEGIN
@@ -15,7 +15,7 @@ FOR EACH ROW
 EXECUTE FUNCTION trg_myuser();
 
 /*
-search±íµÄ´¥·¢Æ÷
+searchï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 CREATE OR REPLACE FUNCTION trg_search() RETURNS trigger AS $trg_search$
     BEGIN
@@ -31,7 +31,7 @@ FOR EACH ROW
 EXECUTE FUNCTION trg_search();
 
 /*
-taste±íµÄ´¥·¢Æ÷
+tasteï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 CREATE OR REPLACE FUNCTION trg_taste() RETURNS trigger AS $trg_taste$
     BEGIN
@@ -47,7 +47,7 @@ FOR EACH ROW
 EXECUTE FUNCTION trg_taste();
 
 /*
-income±íµÄ´¥·¢Æ÷
+incomeï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 CREATE OR REPLACE FUNCTION trg_income() RETURNS trigger AS $trg_income$
     BEGIN
