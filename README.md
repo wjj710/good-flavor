@@ -25,7 +25,7 @@ Under the project root directory<br>
 Execute:
 ```shell
 sudo -u postgres psql
-createdb tb
+CREATE DATABASE tb;
 \i src/sql/1_create_table.sql 
 \i src/sql/2_trigger.sql
 ```
