@@ -24,9 +24,10 @@ pip install -r requirements.txt
 Under the project root directory<br>
 Execute:
 ```shell
+sudo -u postgres psql
 createdb tb
-psql -U postgres -d tb -f "src/sql/1_create_table.sql" 
-psql -U postgres -d tb -f "src/sql/2_trigger.sql"
+\i src/sql/1_create_table.sql 
+\i src/sql/2_trigger.sql
 ```
 ### Set the username and password for the database
 Under the project root directory<br>
