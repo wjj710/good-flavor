@@ -12,7 +12,7 @@ An administrator can check some statistical information about the users, request
 
 ### Configure environment
 * WSL 2
-* python 3.8+
+* Python 3.8+
 * PostgreSQL 14
 
 ### Install libraries and dependencies
