@@ -1,5 +1,5 @@
 asyncpg == 0.25.0
-fastapi == 0.74.1
+fastapi == 0.109.1
 uvicorn == 0.17.5
 passlib[bcrypt]
 python-jose[cryptography]
