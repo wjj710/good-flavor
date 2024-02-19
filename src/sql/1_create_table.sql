@@ -1,5 +1,5 @@
 /*
-�˱�������¼�û���Ϣ���û������޸���ϵ�绰���û����͵�¼����
+此表用来记录用户信息，用户可以修改联系电话、用户简介和登录密码
 */
 CREATE TABLE IF NOT EXISTS myuser (
 	"id" SERIAL PRIMARY KEY,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS myuser (
 
 
 /*
-�˱�������¼��Ѱζ����������Ϣ
+此表用来记录“寻味道”请求信息
 */
 CREATE TABLE IF NOT EXISTS search (
 	"id" SERIAL PRIMARY KEY,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS search (
 );
 
 /*
-�˱�������¼����Ʒ������Ӧ��Ϣ
+此表用来记录“请品鉴”响应信息
 */
 CREATE TABLE IF NOT EXISTS taste (
 	"id" SERIAL PRIMARY KEY,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS taste (
 );
 
 /*
-��Ѱζ�����ɹ���ϸ��
+“寻味道”成功明细表
 */
 CREATE TABLE IF NOT EXISTS success (
 	"req_id" INT references search("id"),
@@ -61,12 +61,12 @@ CREATE TABLE IF NOT EXISTS success (
 );
 
 /*
-�н�������ܱ�
+中介收益汇总表
 */
 CREATE TABLE IF NOT EXISTS income (
-	"month" CHAR(6) NOT NULL, --��Ӧ�ڳɹ���ϸ���еĴ������
-	"city" VARCHAR(32) NOT NULL, --��Ӧ���û����е�ע�����
-	"type" VARCHAR(32) NOT NULL, --��Ӧ���û����е���������
+	"month" CHAR(6) NOT NULL, --对应于成功明细表中的达成日期
+	"city" VARCHAR(32) NOT NULL, --对应于用户表中的注册城市
+	"type" VARCHAR(32) NOT NULL, --对应于用户表中的请求类型
 	"number" INT NOT NULL, 
 	"money" NUMERIC NOT NULL
 );
