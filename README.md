@@ -11,7 +11,8 @@ An administrator can check some statistical information about the users, request
 ## Usage
 
 ### Configure environment
-* python 3.8+
+* WSL 2
+* Python 3.8+
 * PostgreSQL 14
 
 ### Install libraries and dependencies
@@ -39,10 +40,11 @@ Create `config.json`:
 	"password":"password"
 }
 ```
+If there are some problems with password authentication, see [this](https://hassanannajjar.medium.com/how-to-fix-error-password-authentication-failed-for-the-user-in-postgresql-896e1fd880dc).
 ### Start the server
 Under the project root directory<br>
 Execute:
 ```powershell
-uvicorn src.main:app --reload 
+uvicorn src.main:app 
 ```
 
