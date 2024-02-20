@@ -62,19 +62,19 @@ async def baseexception_handler(request, exception):
 """
 初始化
 """
-@app.on_event("startup")
-async def create_temp_dir():
-    import os
-    from pathlib import Path
+# @app.on_event("startup")
+# async def create_temp_dir():
+#     import os
+#     from pathlib import Path
 
-    if not os.path.exists(Settings.TEMPDIR):
-        os.mkdir(Settings.TEMPDIR)
-    else:
-        import glob
-        files = glob.glob(f'{Settings.TEMPDIR}/*')
-        for f in files:
-            os.remove(f)
-    Path(Settings.TEMPDIR).chmod(0o777)
+#     if not os.path.exists(Settings.TEMPDIR):
+#         os.mkdir(Settings.TEMPDIR)
+#     else:
+#         import glob
+#         files = glob.glob(f'{Settings.TEMPDIR}/*')
+#         for f in files:
+#             os.remove(f)
+#     Path(Settings.TEMPDIR).chmod(0o777)
 
 import uvicorn
 if __name__ == "__main__":

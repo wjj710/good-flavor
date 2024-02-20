@@ -40,8 +40,8 @@ class Settings:
 	"""
     DATA_ROUTER_PREFIX = "/data"
 
-    MAX_ROW_PER_FILE = 50000
-    TEMPDIR = ".tb"
+    # MAX_ROW_PER_FILE = 50000
+    # TEMPDIR = ".tb"
 
 str2Model = {
     str.lower(key):value for key,value in vars(model).items() if key.startswith("tb")
@@ -58,9 +58,9 @@ else:
     Settings.DATABASE_USER = _config.get("username", "postgres")
     Settings.DATABASE_PASSWORD = _config.get("password", None)
 
-import os
+# import os
 
-if(platform.system() == 'Windows'):
-    Settings.TEMPDIR = os.path.join(os.getcwd(),Settings.TEMPDIR)
-else:
-    Settings.TEMPDIR = os.path.join("/tmp",Settings.TEMPDIR)
+# if(platform.system() == 'Windows'):
+#     Settings.TEMPDIR = os.path.join(os.getcwd(),Settings.TEMPDIR)
+# else:
+#     Settings.TEMPDIR = os.path.join("/tmp",Settings.TEMPDIR)
