@@ -17,11 +17,11 @@ import asyncpg
 
 user_router = APIRouter(
     prefix="/user",
-    tags=["user相关"],
+    tags=["user"],
     dependencies=[Depends(get_current_user)],
 )
 normal_router = APIRouter(
-    tags=["user相关"],
+    tags=["user"],
 )
 
 
